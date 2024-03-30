@@ -47,9 +47,9 @@ function Menu() {
         
       
 
-      <section className="flex flex-row px-10 pt-10 border-b pb-20">
+      <section className="flex justify-between px-28 pt-10 border-b pb-20">
         <div>
-          <h1>Fruits</h1>
+          <h1 className=" text-xl font-bold text-orange-600">Fruits</h1>
         <MenuData
           scrollValue={scrollValue}
           flag={true}
@@ -57,7 +57,7 @@ function Menu() {
         />
         </div>
           <div>
-            <h1>Chciken</h1>
+            <h1 className=" text-xl font-bold text-orange-600">Chicken</h1>
           <MenuData
           scrollValue={scrollValue}
           flag={true}
@@ -65,11 +65,19 @@ function Menu() {
         />
         </div>
         <div>
-          <h1>Drinks</h1>
+          <h1 className="text-xl font-bold text-orange-600">Drinks</h1>
           <MenuData
           scrollValue={scrollValue}
           flag={true}
           data={foodItems?.filter((n) => n.category === "drinks")}
+        />
+        </div>
+        <div>
+          <h1 className="text-xl font-bold text-orange-600">Drinks</h1>
+          <MenuData
+          scrollValue={scrollValue}
+          flag={true}
+          data={foodItems?.filter((n) => n.category === "soups")}
         />
         </div>
       </section>

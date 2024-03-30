@@ -61,15 +61,14 @@ const RowContainer = ({ flag, data, scrollValue }) => {
         data.map((item) => (
           <div
             key={item.id}
-            className="w-225 min-w-[225px] md:w-300 md:min-w-[300px] h-auto bg-cardOverlay rounded-lg my-3 md:my-2 p-2 backdrop-filter backdrop-blur-lg hover:drop-shadow-lg flex   flex-direction: row
+            className="w-225 min-w-[225px] md:w-300 md:min-w-[400px] h-auto bg-cardOverlay rounded-lg my-3 md:my-5 p-2 backdrop-filter backdrop-blur-lg hover:drop-shadow-lg flex   flex-direction: row
               items-center justify-between"
           >
             <div className="h-30 flex
             w-full items-center justify-between">
               <div >
-                <img src={item?.imageURL} alt="" className="h-10 w-10" />
-              </div>
-              <div>
+                <img src={item?.imageURL} alt="" className="h-10 w-10 object-contain" />
+            
                 <p className="border-b relative w-full text-sm font-bold">
                   {item?.title}
                 </p>
@@ -77,17 +76,17 @@ const RowContainer = ({ flag, data, scrollValue }) => {
               <div>
                 <p>₹{item?.price}</p>
               </div>
-              <div>
+              {/* <div>
                 <motion.div
                   whileTap={{ scale: 0.75 }}
-                  className="w-10 h-8 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md"
+                  className="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md"
                   onClick={() => {
                     !cartItems.includes(item) && setItems([...cartItems, item]);
                   }}
                 >
                   <GiShoppingBag className="text-white" />
                 </motion.div>
-              </div>
+              </div> */}
             </div>
           </div>
         ))
