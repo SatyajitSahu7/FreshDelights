@@ -7,8 +7,13 @@ import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 import EmptyCart from "../img/emptyCart.svg";
 import CartItem from "./CartItem";
+import { useNavigate } from "react-router-dom";
 
 const CartContainer = () => {
+  const navigate = useNavigate();
+  const handleShipping = () => {
+    navigate("/shippingAddressForm");
+  };
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
   const [flag, setFlag] = useState(1);
   const [tot, setTot] = useState(0);
@@ -88,6 +93,7 @@ const CartContainer = () => {
             </div>
             {user ? (
               <motion.button
+                onClick={handleShipping}
                 whileTap={{ scale: 0.8 }}
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
