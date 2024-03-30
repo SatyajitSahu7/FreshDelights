@@ -71,11 +71,20 @@ const RowContainer = ({ flag, data, scrollValue }) => {
                   <p className="border-b relative w-full text-sm font-bold">
                     {item?.title}
                   </p>
-                  <p className=" text-sm pt-2">Description</p>
+                  {/* <p className=" text-sm pt-2">Description</p> */}
                 </div>
                 <div>
                   <p>${item?.price}</p>
                 </div>
+                <motion.div
+                whileTap={{ scale: 0.75 }}
+                className="w-20 h-8 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md"
+                onClick={() => {
+                  !cartItems.includes(item) && setItems([...cartItems, item]);
+                }}
+              >
+                <GiShoppingBag className="text-white" />
+              </motion.div>
               </div>
             </div>
         ))
