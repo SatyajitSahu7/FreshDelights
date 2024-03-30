@@ -7,7 +7,10 @@ import { getAllFoodItems } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
 import Menu from "./components/Menu";
 import About from "./components/About/About";
-
+import ShippingAddressForm from "./components/Checkout/ShippingAddressForm";
+import OrderSummary from "./components/Checkout/OrderSummary";
+import PlacedOrder from "./components/Checkout/PlacedOrder";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [{ foodItems }, dispatch] = useStateValue();
@@ -32,10 +35,17 @@ const App = () => {
           <Routes>
             <Route path="/*" element={<MainContainer />} />
             <Route path="/createItem" element={<CreateContainer />} />
-            <Route path="/menu" element={<Menu />}/>
-            <Route path="/about" element={<About/>}/>
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/about" element={<About />} />
+            <Route
+              path="/shippingAddressForm"
+              element={<ShippingAddressForm />}
+            />
+            <Route path="/orderSummary" element={<OrderSummary />} />
+            <Route path="/PlacedOrder" element={<PlacedOrder />} />
           </Routes>
         </main>
+        <Footer/>
       </div>
     </AnimatePresence>
   );
