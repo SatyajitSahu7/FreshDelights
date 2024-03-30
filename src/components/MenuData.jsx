@@ -51,7 +51,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
   return (
     <div
       ref={rowContainer}
-      className={`w-full my-6 md:my-12 flex items-center gap-3 scroll-smooth ${
+      className={`w-full my-6 md:my-0 gap-3 scroll-smooth ${
         flag
           ? "overflow-x-scroll scrollbar-none"
           : " items-center justify-center flex-wrap"
@@ -59,34 +59,37 @@ const RowContainer = ({ flag, data, scrollValue }) => {
     >
       {data && data.length > 0 ? (
         data.map((item) => (
-            <div
-              key={item.id}
-              className="w-225 min-w-[225px] md:w-300 md:min-w-[300px] h-auto bg-cardOverlay rounded-lg my-3 md:my-12 p-2 backdrop-filter backdrop-blur-lg hover:drop-shadow-lg flex flex-col items-center justify-between"
-            >
-              <div className="h-30 flex items-center gap-3 px-2">
-                <div className="bg-red border overflow-hidden rounded-3xl">
-                  <img src={item?.imageURL} alt="" className="h-10" />
-                </div>
-                <div className="w-full">
-                  <p className="border-b relative w-full text-sm font-bold">
-                    {item?.title}
-                  </p>
-                  {/* <p className=" text-sm pt-2">Description</p> */}
-                </div>
-                <div>
-                  <p>${item?.price}</p>
-                </div>
+          <div
+            key={item.id}
+            className="w-225 min-w-[225px] md:w-300 md:min-w-[300px] h-auto bg-cardOverlay rounded-lg my-3 md:my-2 p-2 backdrop-filter backdrop-blur-lg hover:drop-shadow-lg flex   flex-direction: row
+              items-center justify-between"
+          >
+            <div className="h-30 flex
+            w-full items-center justify-between">
+              <div >
+                <img src={item?.imageURL} alt="" className="h-10 w-10" />
+              </div>
+              <div>
+                <p className="border-b relative w-full text-sm font-bold">
+                  {item?.title}
+                </p>
+              </div>
+              <div>
+                <p>₹{item?.price}</p>
+              </div>
+              <div>
                 <motion.div
-                whileTap={{ scale: 0.75 }}
-                className="w-20 h-8 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md"
-                onClick={() => {
-                  !cartItems.includes(item) && setItems([...cartItems, item]);
-                }}
-              >
-                <GiShoppingBag className="text-white" />
-              </motion.div>
+                  whileTap={{ scale: 0.75 }}
+                  className="w-10 h-8 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md"
+                  onClick={() => {
+                    !cartItems.includes(item) && setItems([...cartItems, item]);
+                  }}
+                >
+                  <GiShoppingBag className="text-white" />
+                </motion.div>
               </div>
             </div>
+          </div>
         ))
       ) : (
         <div className="w-full flex flex-col items-center justify-center">

@@ -47,9 +47,8 @@ function Menu() {
         
       
 
-      <section className="flex flex-col px-10 pt-10 border-b pb-20">
-        <div className="
-        ">
+      <section className="flex flex-row px-10 pt-10 border-b pb-20">
+        <div>
           <h1>Fruits</h1>
         <MenuData
           scrollValue={scrollValue}
@@ -57,7 +56,7 @@ function Menu() {
           data={foodItems?.filter((n) => n.category === "fruits")}
         />
         </div>
-          <div className="">
+          <div>
             <h1>Chciken</h1>
           <MenuData
           scrollValue={scrollValue}
