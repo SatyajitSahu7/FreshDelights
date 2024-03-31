@@ -2,7 +2,7 @@ import { HomeOutlined, MailOutlined,LocalPhoneOutlined } from "@mui/icons-materi
 const Footer = () => {
   return (
     <footer className="text-orange-600 body-font border-t bg-white">
-      <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div className="container px-10 py-16 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-orange-900">
             <span className="ml-1 text-sm text-transform: uppercase">Contact</span>
@@ -45,7 +45,7 @@ const Footer = () => {
       </div>
       <div className="bg-orange-100">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-          <p className="text-orange-500 text-sm text-center sm:text-left">© 2024 TailwindCSS — <a href="#" rel="noopener noreferrer" className="text-orange-600 ml-1" target="_blank">@tailwind.css</a></p>
+          <p className="text-orange-500 text-sm text-center sm:text-left">© 2024 FreshDelights <a href="#" rel="noopener noreferrer" className="text-orange-600 ml-1" target="_blank"></a></p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
             {/* Replace the following SVG elements with your preferred social media icons */}
             <a className="text-orange-500">

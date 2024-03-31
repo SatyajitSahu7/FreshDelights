@@ -68,9 +68,9 @@ const Header = () => {
             <Link to={"/about"}><li className="text-base text-textColor hover:text-slate-900 hover:scale-105 duration-100 transition-all ease-in-out cursor-pointer">
               About Us
             </li></Link>
-            <li className="text-base text-textColor hover:text-slate-900 hover:scale-105 duration-100 transition-all ease-in-out cursor-pointer">
+            {/* <li className="text-base text-textColor hover:text-slate-900 hover:scale-105 duration-100 transition-all ease-in-out cursor-pointer">
               Services
-            </li>
+            </li> */}
           </ul>
           <div
             className="relative flex items-center justify-center group cursor-pointer"
@@ -192,14 +192,14 @@ const Header = () => {
                 >
                   About Us
                 </li></Link>
-                <li
+                {/* <li
                   className="text-base text-textColor hover:text-slate-900 cursor-pointer "
                   onClick={() => {
                     setisMenu(false);
                   }}
                 >
                   Services
-                </li>
+                </li> */}
               </ul>
 
               <p

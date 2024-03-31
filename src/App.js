@@ -6,7 +6,7 @@ import { useStateValue } from "./context/StateProvider";
 import { getAllFoodItems } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
 import Menu from "./components/Menu";
-import About from "./components/About/About";
+import About from "./components/About";
 import ShippingAddressForm from "./components/Checkout/ShippingAddressForm";
 import OrderSummary from "./components/Checkout/OrderSummary";
 import PlacedOrder from "./components/Checkout/PlacedOrder";
