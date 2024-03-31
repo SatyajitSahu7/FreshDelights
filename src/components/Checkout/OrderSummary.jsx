@@ -9,12 +9,18 @@ function OrderSummary() {
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
   const [tot, setTot] = useState(0);
   const [flag, setFlag] = useState(1);
+  const [currentdate, setCurrentdate] = useState("");
 
   useEffect(() => {
     let totalPrice = cartItems.reduce(function (acc, item) {
       return acc + item.qty * item.price;
     }, 0);
     setTot(totalPrice);
+    const date=new Date()
+    const formattedDate = `${date.getDate()} ${
+      date.toLocaleString("default", { month: "long" })
+    } ${date.getFullYear()}`;
+    setCurrentdate(formattedDate);
   }, [tot, flag]);
 
   console.log("cartItems", cartItems);
@@ -61,7 +67,7 @@ function OrderSummary() {
               <div className=" p-3 border-r pr-20">
                 <h1 className=" font-semibold text-lg">Date</h1>
                 <p className=" text-xs font-bold text-lighttextGray">
-                  1st May 2024
+                  {currentdate}
                 </p>
               </div>
               <div className="p-3">
