@@ -1,7 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { GiShoppingBag } from "react-icons/gi";
-import { motion } from "framer-motion";
-import Rating from "@mui/material/Rating";
 import NotFound from "../img/NotFound.svg";
 import { doc, updateDoc } from "firebase/firestore";
 import { firestore } from "../firebase.config";
@@ -64,11 +61,17 @@ const RowContainer = ({ flag, data, scrollValue }) => {
             className="w-225 min-w-[225px] md:w-300 md:min-w-[400px] h-auto bg-cardOverlay rounded-lg my-3 md:my-5 p-2 backdrop-filter backdrop-blur-lg hover:drop-shadow-lg flex   flex-direction: row
               items-center justify-between"
           >
-            <div className="h-30 flex
-            w-full items-center justify-between">
-              <div >
-                <img src={item?.imageURL} alt="" className="h-10 w-10 object-contain" />
-            
+            <div
+              className="h-30 flex
+            w-full items-center justify-between"
+            >
+              <div>
+                <img
+                  src={item?.imageURL}
+                  alt=""
+                  className="h-10 w-10 object-contain"
+                />
+
                 <p className="border-b relative w-full text-sm font-bold">
                   {item?.title}
                 </p>
@@ -76,17 +79,6 @@ const RowContainer = ({ flag, data, scrollValue }) => {
               <div>
                 <p>₹{item?.price}</p>
               </div>
-              {/* <div>
-                <motion.div
-                  whileTap={{ scale: 0.75 }}
-                  className="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md"
-                  onClick={() => {
-                    !cartItems.includes(item) && setItems([...cartItems, item]);
-                  }}
-                >
-                  <GiShoppingBag className="text-white" />
-                </motion.div>
-              </div> */}
             </div>
           </div>
         ))

@@ -37,15 +37,12 @@ const App = () => {
             <Route path="/createItem" element={<CreateContainer />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/about" element={<About />} />
-            <Route
-              path="/shippingAddressForm"
-              element={<ShippingAddressForm />}
-            />
+            <Route path="/shippingAddressForm" element={<ShippingAddressForm />}/>
             <Route path="/orderSummary" element={<OrderSummary />} />
             <Route path="/PlacedOrder" element={<PlacedOrder />} />
           </Routes>
         </main>
-        <Footer/>
+        <Footer />
       </div>
     </AnimatePresence>
   );

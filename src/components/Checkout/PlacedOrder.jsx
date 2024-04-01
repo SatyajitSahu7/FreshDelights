@@ -5,7 +5,7 @@ const PlacedOrder = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="text-center">
-        <p className="text-3xl font-bold text-green-600">
+        <p className="text-3xl font-bold text-orange-600">
           Thanks for shopping with us!
         </p>
         <ReactConfetti
@@ -13,7 +13,7 @@ const PlacedOrder = () => {
           height={window.innerHeight}
           recycle={false}
         />
-        <a href="/" className=" text-sm text-green-300">Return to home</a>
+        <a href="/" className=" text-sm text-orange-900">Return to home</a>
         <span className="text-2xl animate-bounce">&#127881;</span>
       </div>
     </div>
