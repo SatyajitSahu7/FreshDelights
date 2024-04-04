@@ -98,7 +98,7 @@ function OrderSummary() {
               <div className="space-y-3 font-semibold mb-10">
                 <div className="flex justify-between pt-3 text-black">
                   <span className="text-white">Price</span>
-                  <span className="text-white">₹{tot + 2.5}</span>
+                  <span className="text-white">₹{tot + 25}</span>
                 </div>
                 {/* Other price details */}
               </div>

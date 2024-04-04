@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import HomeContainer from "./HomeContainer";
 import { motion } from "framer-motion";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
@@ -9,12 +9,18 @@ import CartContainer from "./CartContainer";
 
 const MainContainer = () => {
   const [{ foodItems, cartShow }, dispatch] = useStateValue();
-  const [scrollValue, setscrollValue] = useState(0);
+  const [scrollValue, setScrollValue] = useState(0);
   useEffect(() => {}, [scrollValue]);
+  const scrollcontainerRef = useRef();
+  const handleScroll = (scrollAmount) =>{
+    const newScrollValue = scrollValue + scrollAmount;
+    setScrollValue(newScrollValue);
+    scrollcontainerRef.current.scrollLeft = newScrollValue;
+  }
   console.log(foodItems)
 
   return (
-    <div className="w-full h-auto flex flex-col items-center justify-center">
+    <div ref={scrollcontainerRef} className="w-full h-auto flex flex-col items-center justify-center">
       <HomeContainer />
       <section className="w-full my-3">
         <div className="w-full flex items-center justify-between">
@@ -29,14 +35,14 @@ const MainContainer = () => {
             <motion.div
               whileTap={{ scale: 0.75 }}
               className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer  hover:shadow-lg flex items-center justify-center"
-              onClick={() => setscrollValue(-200)}
+              onClick={() => handleScroll(-300)}
             >
               <MdChevronLeft className="text-lg text-white" />
             </motion.div>
             <motion.div
               whileTap={{ scale: 0.75 }}
               className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer  hover:shadow-lg flex items-center justify-center"
-              onClick={() => setscrollValue(200)}
+              onClick={() => handleScroll(300)}
             >
               <MdChevronRight className="text-lg text-white " />
             </motion.div>
